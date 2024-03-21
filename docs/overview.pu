@@ -1,0 +1,19 @@
+@startuml
+actor User
+rectangle "Host Machine" {
+  [X11 Display] as X11Display
+  User -- X11Display : xhost +
+}
+
+rectangle "Docker Container" {
+  component "Weston (X11 backend)" as Weston
+  [X11 Socket] as X11Socket
+  component "my_wayland_app" as MyApp
+}
+
+User --> X11Display : xhost +\nexecute
+Weston --> X11Socket : Mount\n(/tmp/.X11-unix)
+X11Socket --> X11Display : Share
+Weston --> MyApp : Wayland Protocol
+MyApp --> Weston : EGL/OpenGL
+@enduml
