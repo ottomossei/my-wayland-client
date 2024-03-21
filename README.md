@@ -1,8 +1,8 @@
-# my-wayland-app
+# my-wayland-client
 
 ## Introduction
 
-`my-wayland-app` is an open-source project demonstrating how to run GUI applications on Wayland within a Docker container. This project leverages Weston as the Wayland compositor backend and showcases the operation of a custom Wayland application named `my_wayland_app`.
+`my-wayland-client` is a project demonstrating how to run GUI applications on Wayland within a Docker container. This project leverages Weston as the Wayland compositor backend and showcases the operation of a custom Wayland application named `my_wayland_client`.
 
 ## Features
 
@@ -19,16 +19,20 @@ Before you begin, ensure you have the following installed on your host machine:
 
 ## Getting Started
 
-To get started with `my-wayland-app`, clone the repository and follow the steps below.
+To get started with `my-wayland-client`, clone the repository and follow the steps below.
 
 ```bash
-git clone https://github.com/yourusername/my-wayland-app.git
-cd my-wayland-app
+git clone https://github.com/yourusername/my-wayland-client.git
+cd my-wayland-client
 bash docker_run.sh
 ```
 
 ## Architecture
-The following diagram provides an overview of the architecture:
+First, a rough overall view of Linux graphics is shown below.  
+Reference : https://zenn.dev/hidenori3/articles/c2be2bd50fc8dd
+![arch](./docs/arch.png)
+
+The following diagram provides an overview of the architecture in this project:
 ![overview](./docs/overview.png)
 
 ## Results

@@ -28,6 +28,10 @@ WORKDIR /app
 # XDG_RUNTIME_DIR の作成と権限設定
 RUN mkdir -p /run/user/0 && chmod 0700 /run/user/0
 
+# ビルドディレクトリの作成
+RUN if [ -d "build" ]; then rm -r build; fi
+RUN mkdir -p build
 RUN bash internal_build.sh
 
-CMD weston --backend=x11-backend.so & sleep 1 && ls  && ./build/my_wayland_app >./log/run.txt
+
+CMD weston --backend=x11-backend.so & sleep 1  && ./build/my_wayland_client >./log/run.txt
