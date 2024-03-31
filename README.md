@@ -22,7 +22,7 @@ Before you begin, ensure you have the following installed on your host machine:
 To get started with `my-wayland-client`, clone the repository and follow the steps below.
 
 ```bash
-git clone https://github.com/yourusername/my-wayland-client.git
+git clone https://github.com/ottomossei/my-wayland-client.git
 cd my-wayland-client
 bash docker_run.sh
 ```
